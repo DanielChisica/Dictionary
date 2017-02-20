@@ -32,7 +32,7 @@ public class Dictionary extends javax.swing.JFrame {
      */
     public Dictionary() {
         initComponents();
-       // setIconImage(new ImageIcon(getClass().getResource("/Resources/02.jpg")).getImage());
+        setIconImage(new ImageIcon(getClass().getResource("/Resources/02.jpg")).getImage());
         setTitle("Java Programming Dictionary");
 
     }
@@ -168,24 +168,33 @@ public class Dictionary extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    /**
+     * Here is the method that going to classify the words in found words and not
+     * found words when the user already introduced the phrase, and clicked on Check
+     * 
+     * @param evt Receives a click event on the button Check  
+     */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         dic1.setMessage(jTextField1.getText());
         String Parts[]=dic1.getMessage().split(" ");
         
-        Conjunt tester=new Conjunt();
+        Conjunt tester=new Conjunt(); //Set where the words will introduce in it
         for (int i = 0; i < Parts.length; i++) {
             tester.add(Parts[i]);
         }
         dic1.setMessageConjuct(tester);
         
         
-        Conjunt tester2= new Conjunt();
+        Conjunt tester2= new Conjunt();//Set where the dictionary will introduce in it
         for (int i = 0; i < dic1.Parts2.length; i++) {
             tester2.add(dic1.Parts2[i]);
         }
         dic1.setConjunctDictionary(tester2);
+        
+        //Uncommit if you want to see how it´s making the sets, this will appears
+        //on the console
         /**
         System.out.println("Printing the dictionary");
         
