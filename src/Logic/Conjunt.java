@@ -165,8 +165,7 @@ public class Conjunt implements TADConjuntable {
      * @return Conjunt: Set that is a result of the difference between 
      * two sets
      */
-    @Override
-    public Conjunt Dif(TADConjuntable c) {
+    public Conjunt Difference(Conjunt c) {
        Conjunt difference= new Conjunt(this);
        Iterator iterator=iterator();
             while (iterator.hasNext()) {            
@@ -184,8 +183,7 @@ public class Conjunt implements TADConjuntable {
      * @param C: Set that is going to be intersected
      * @return Conjunt: Set with the similar objects of the two sets
      */
-    @Override
-    public Conjunt Intersetion(TADConjuntable C) {
+    public Conjunt Intersection(Conjunt C) {
         Conjunt intersection= new Conjunt(this);
         Iterator itreceived= iterator();
             while (itreceived.hasNext()) {            
@@ -255,6 +253,16 @@ public class Conjunt implements TADConjuntable {
             New[i]=data[i];
         }
         data=New;
+    }
+
+    @Override
+    public TADConjuntable Dif(TADConjuntable c) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public TADConjuntable Intersetion(TADConjuntable C) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     /**
